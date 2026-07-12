@@ -49,13 +49,6 @@
           }
         }
       },
-      "options": {
-        "headers": {
-          "sleeve-provider": "xai",
-          "sleeve-harness": "opencode"
-        },
-        "baseURL": "http://127.0.0.1:17321"
-      }
     }
   },
   "compaction": {
