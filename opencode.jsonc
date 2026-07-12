@@ -19,7 +19,62 @@
       "headers": {
         "Authorization": "Bearer {env:ICONS0_BEARER_TOKEN}"
       }
+    },
+    "lific": {
+      "command": ["sh", "-c", "PATH=\"$HOME/.cargo/bin:$PATH\" lific --db \"$HOME/.local/share/lific/lific.db\" mcp"],
+      "enabled": true,
+      "type": "local",
+      "environment": {
+        "LIFIC_API_KEY": "{env:LIFIC_API_KEY}"
+      }
     }
   },
-  "provider": {}
+  "provider": {
+    "opencode-go": {
+      "options": {
+        "headers": {
+          "sleeve-provider": "opencode-go",
+          "sleeve-harness": "opencode"
+        },
+        "baseURL": "http://127.0.0.1:17321"
+      }
+    },
+    "grok": {
+      "options": {
+        "headers": {
+          "sleeve-provider": "grok",
+          "sleeve-harness": "opencode"
+        },
+        "baseURL": "http://127.0.0.1:17321"
+      }
+    },
+    "xai": {
+      "models": {
+        "grok-composer-2.5-fast": {
+          "name": "Grok Composer 2.5 Fast",
+          "attachment": true,
+          "tool_call": true,
+          "limit": {
+            "context": 256000,
+            "output": 256000
+          },
+          "cost": {
+            "input": 0.50,
+            "output": 2.50,
+            "cache_read": 0.20
+          }
+        }
+      },
+      "options": {
+        "headers": {
+          "sleeve-provider": "xai",
+          "sleeve-harness": "opencode"
+        },
+        "baseURL": "http://127.0.0.1:17321"
+      }
+    }
+  },
+  "compaction": {
+    "prune": false
+  }
 }
