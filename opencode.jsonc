@@ -12,14 +12,6 @@
         "x-api-key": "{env:EXA_API_KEY}"
       }
     },
-    "icons0": {
-      "type": "remote",
-      "enabled": true,
-      "url": "https://icons0.dev/mcp",
-      "headers": {
-        "Authorization": "Bearer {env:ICONS0_BEARER_TOKEN}"
-      }
-    },
     "lific": {
       "command": ["sh", "-c", "PATH=\"$HOME/.cargo/bin:$PATH\" lific --db \"$HOME/.local/share/lific/lific.db\" mcp"],
       "enabled": true,
