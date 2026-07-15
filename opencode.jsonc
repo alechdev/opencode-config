@@ -42,6 +42,9 @@
             "context": 256000,
             "output": 256000
           },
+          "modalities": {
+            "input": ["text", "image"]
+          },
           "cost": {
             "input": 0.50,
             "output": 2.50,
