@@ -2,7 +2,7 @@
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": false,
   "permission": "allow",
-  "plugin": [],
+  "plugin": ["./plugins/grok-build-spoof.ts"],
   "mcp": {
     "exa": {
       "type": "remote",
@@ -18,15 +18,6 @@
       "options": {
         "headers": {
           "sleeve-provider": "opencode-go",
-          "sleeve-harness": "opencode"
-        },
-        "baseURL": "http://127.0.0.1:17321"
-      }
-    },
-    "grok": {
-      "options": {
-        "headers": {
-          "sleeve-provider": "grok",
           "sleeve-harness": "opencode"
         },
         "baseURL": "http://127.0.0.1:17321"
@@ -51,7 +42,7 @@
             "cache_read": 0.20
           }
         }
-      },
+      }
     }
   },
   "compaction": {
