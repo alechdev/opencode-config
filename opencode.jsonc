@@ -11,12 +11,12 @@
     "provider": "exa"
   },
   "permission": "allow",
-  "plugin": ["oc-tps@latest"],
+  "plugin": [],
   "providers": {
     "codex-lb": {
       "name": "Codex LB",
       "env": ["CODEX_LB_API_KEY"],
-      "package": "@opencode-ai/ai/providers/openai-compatible",
+      "package": "aisdk:@ai-sdk/openai-compatible",
       "settings": {
         "baseURL": "{env:CODEX_LB_BASE_URL}",
         "apiKey": "{env:CODEX_LB_API_KEY}"
