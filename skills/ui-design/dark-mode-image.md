@@ -2,7 +2,36 @@
 
 Use when adapting a standalone source image into a dark-mode-suitable version.
 
-> **Model requirement:** the image-generation steps need the `imagegen` skill (Codex, gpt-image-2). In agents without it (such as Claude Code), identify the images needing dark variants, list them with target background colors, and ask the user to generate them or source dark versions manually. Never substitute CSS filter workarounds.
+> **Model requirement:** the image-generation steps need the `imagegen` skill (Codex, gpt-image-2). Agents running inside Codex have it natively. Agents without it but with shell access can delegate to the Codex CLI — see [Delegating to the Codex CLI](#delegating-to-the-codex-cli). Only when that isn't possible either (no `codex` binary, not logged in, no shell), identify the images needing dark variants, list them with target background colors, and ask the user to generate them or source dark versions manually. Never substitute CSS filter workarounds.
+
+## Delegating to the Codex CLI
+
+If this agent lacks a native `imagegen` skill but has shell access, run the generation inside a non-interactive Codex session. Codex loads its own bundled `imagegen` skill, so all rules in this document still apply.
+
+Preconditions:
+
+```sh
+codex login status                            # → "Logged in using ChatGPT"
+codex features list | grep image_generation   # → image_generation  stable  true
+```
+
+One `codex exec` per task; batch every requested image into a single prompt (each invocation is a fresh session billed to the user's plan, ~40k tokens + image cost):
+
+```sh
+codex exec --skip-git-repo-check \
+  -C <project-dir> \
+  -s workspace-write \
+  -o /tmp/opencode/codex-imagegen-last.txt \
+  "Load and follow the imagegen skill. Create the dark-mode version of <source-path>: invert the background (<color>), preserving composition, softness, fades, and foreground hues. Output must be exactly <W>x<H>, saved to <project-dir>/<name>-dark.<ext>"
+```
+
+Field notes (from a live test):
+
+- Codex writes raw generations under `$CODEX_HOME/generated_images/` and copies the final file to the absolute path given in the prompt — always name a path inside the project so the save-path policy above holds.
+- Ask for exact dimensions in the prompt; the API sometimes ignores them (a 1024×1024 request came back 1254×1254) and Codex resizes on its own, but verify afterwards anyway.
+- Flags: `-C` sets cwd, `-s workspace-write` lets it write into the project, `--skip-git-repo-check` allows non-repo dirs. Allow 2–4 min timeouts. Never pass `--dangerously-bypass-approvals-and-sandbox`.
+
+Then verify as usual: the file exists at the project path, dimensions match the original exactly (`file` or ImageMagick `identify`), and visually confirm composition, softness, fades, and foreground palette before wiring the asset in.
 
 ## Load First
 
