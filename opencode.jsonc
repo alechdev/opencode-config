@@ -15,7 +15,7 @@
     "codex-lb": {
       "name": "Codex LB",
       "env": ["CODEX_LB_API_KEY"],
-      "package": "@opencode-ai/ai/providers/openai-compatible/responses",
+      "package": "@opencode-ai/ai/providers/openai/responses",
       "settings": {
         "baseURL": "{env:CODEX_LB_BASE_URL}",
         "apiKey": "{env:CODEX_LB_API_KEY}"
@@ -30,7 +30,7 @@
     "codex-lb-sleev": {
       "name": "Codex LB through Sleev",
       "env": ["CODEX_LB_API_KEY"],
-      "package": "@opencode-ai/ai/providers/openai-compatible/responses",
+      "package": "@opencode-ai/ai/providers/openai/responses",
       "settings": {
         "baseURL": "{env:SLEEV_BASE_URL}",
         "apiKey": "{env:CODEX_LB_API_KEY}"
