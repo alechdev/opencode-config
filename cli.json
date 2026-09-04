@@ -13,7 +13,7 @@
   "prompt": {
     "editor": false,
     "paste": "compact",
-    "image_preview": false
+    "image_preview": true
   },
   "session": {
     "sidebar": "auto",
@@ -31,5 +31,5 @@
     "enabled": false,
     "volume": 0.4
   },
-  "plugins": ["./vendor/oc-tps/tui.tsx"]
+  "plugins": []
 }
