@@ -12,135 +12,40 @@
   },
   "permission": "allow",
   "providers": {
-    "openai": {
+    "codex-lb": {
+      "name": "Codex LB",
+      "env": ["CODEX_LB_API_KEY"],
+      "package": "@opencode-ai/ai/providers/openai-compatible/responses",
       "settings": {
-        "baseURL": "http://127.0.0.1:17321"
+        "baseURL": "{env:CODEX_LB_BASE_URL}",
+        "apiKey": "{env:CODEX_LB_API_KEY}"
+      },
+      "models": {
+        "gpt-5.6-sol": { "name": "GPT-5.6 Sol" },
+        "gpt-5.6-terra": { "name": "GPT-5.6 Terra" },
+        "gpt-5.6-luna": { "name": "GPT-5.6 Luna" },
+        "gpt-5.5": { "name": "GPT-5.5" }
+      }
+    },
+    "codex-lb-sleev": {
+      "name": "Codex LB through Sleev",
+      "env": ["CODEX_LB_API_KEY"],
+      "package": "@opencode-ai/ai/providers/openai-compatible/responses",
+      "settings": {
+        "baseURL": "{env:SLEEV_BASE_URL}",
+        "apiKey": "{env:CODEX_LB_API_KEY}"
       },
       "headers": {
-        "sleev-provider": "codex",
-        "sleev-harness": "opencode"
+        "sleev-harness": "opencode",
+        "sleev-base-url": "{env:CODEX_LB_BASE_URL}"
+      },
+      "models": {
+        "gpt-5.6-sol": { "name": "GPT-5.6 Sol" },
+        "gpt-5.6-terra": { "name": "GPT-5.6 Terra" },
+        "gpt-5.6-luna": { "name": "GPT-5.6 Luna" },
+        "gpt-5.5": { "name": "GPT-5.5" }
       }
     }
-    // "openai": {
-    //   "name": "Codex LB",
-    //   "env": ["CODEX_LB_API_KEY"],
-    //   "settings": {
-    //     "baseURL": "{env:CODEX_LB_BASE_URL}",
-    //     "apiKey": "{env:CODEX_LB_API_KEY}"
-    //   },
-    //   "models": {
-    //     "gpt-5.6-sol": {
-    //       "name": "GPT-5.6 Sol",
-    //       "settings": {
-    //         "reasoningEffort": "medium",
-    //         "reasoningSummary": "detailed"
-    //       },
-    //       "variants": [
-    //         {
-    //           "id": "low",
-    //           "settings": { "reasoningEffort": "low" }
-    //         },
-    //         {
-    //           "id": "medium",
-    //           "settings": { "reasoningEffort": "medium" }
-    //         },
-    //         {
-    //           "id": "high",
-    //           "settings": { "reasoningEffort": "high" }
-    //         },
-    //         {
-    //           "id": "xhigh",
-    //           "settings": { "reasoningEffort": "xhigh" }
-    //         },
-    //         {
-    //           "id": "max",
-    //           "settings": { "reasoningEffort": "max" }
-    //         }
-    //       ],
-    //       "limit": {
-    //         "context": 272000,
-    //         "output": 65536
-    //       }
-    //     },
-    //     "gpt-5.6-terra": {
-    //       "name": "GPT-5.6 Terra",
-    //       "settings": {
-    //         "reasoningEffort": "medium",
-    //         "reasoningSummary": "detailed"
-    //       },
-    //       "variants": [
-    //         {
-    //           "id": "low",
-    //           "settings": { "reasoningEffort": "low" }
-    //         },
-    //         {
-    //           "id": "medium",
-    //           "settings": { "reasoningEffort": "medium" }
-    //         },
-    //         {
-    //           "id": "high",
-    //           "settings": { "reasoningEffort": "high" }
-    //         },
-    //         {
-    //           "id": "xhigh",
-    //           "settings": { "reasoningEffort": "xhigh" }
-    //         },
-    //         {
-    //           "id": "max",
-    //           "settings": { "reasoningEffort": "max" }
-    //         }
-    //       ],
-    //       "limit": {
-    //         "context": 272000,
-    //         "output": 65536
-    //       }
-    //     },
-    //     "gpt-5.6-luna": {
-    //       "name": "GPT-5.6 Luna",
-    //       "settings": {
-    //         "reasoningEffort": "medium",
-    //         "reasoningSummary": "detailed"
-    //       },
-    //       "variants": [
-    //         {
-    //           "id": "low",
-    //           "settings": { "reasoningEffort": "low" }
-    //         },
-    //         {
-    //           "id": "medium",
-    //           "settings": { "reasoningEffort": "medium" }
-    //         },
-    //         {
-    //           "id": "high",
-    //           "settings": { "reasoningEffort": "high" }
-    //         },
-    //         {
-    //           "id": "xhigh",
-    //           "settings": { "reasoningEffort": "xhigh" }
-    //         },
-    //         {
-    //           "id": "max",
-    //           "settings": { "reasoningEffort": "max" }
-    //         }
-    //       ],
-    //       "limit": {
-    //         "context": 1050000,
-    //         "output": 65536
-    //       }
-    //     },
-    //     "gpt-5.5": {
-    //       "name": "GPT-5.5",
-    //       "settings": {
-    //         "reasoningEffort": "high",
-    //         "reasoningSummary": "detailed"
-    //       },
-    //       "limit": {
-    //         "context": 272000,
-    //         "output": 65536
-    //       }
-    //     }
-    //   }
-    // }
   },
   "provider": {
     "xai": {
