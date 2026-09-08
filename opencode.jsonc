@@ -3,9 +3,9 @@
   "autoupdate": false,
   "model": "openai/gpt-5.6-sol",
   "agents": {
-    // "title": {
-    //   "model": "openai/gpt-5.6-luna"
-    // }
+    "title": {
+      "model": "codex-lb/gpt-5.6-luna"
+    }
   },
   "websearch": {
     "provider": "exa"
@@ -35,10 +35,36 @@
             { "id": "max", "settings": { "reasoningEffort": "max" } }
           ]
         },
-        "gpt-5.6-sol": { "name": "GPT-5.6 Sol" },
-        "gpt-5.6-terra": { "name": "GPT-5.6 Terra" },
-        "gpt-5.6-luna": { "name": "GPT-5.6 Luna" },
-        "gpt-5.5": { "name": "GPT-5.5" }
+        "gpt-5.6-sol": {
+          "name": "GPT-5.6 Sol",
+          "variants": [
+            { "id": "low", "settings": { "reasoningEffort": "low" } },
+            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
+            { "id": "high", "settings": { "reasoningEffort": "high" } },
+            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
+            { "id": "max", "settings": { "reasoningEffort": "max" } }
+          ]
+        },
+        "gpt-5.6-terra": {
+          "name": "GPT-5.6 Terra",
+          "variants": [
+            { "id": "low", "settings": { "reasoningEffort": "low" } },
+            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
+            { "id": "high", "settings": { "reasoningEffort": "high" } },
+            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
+            { "id": "max", "settings": { "reasoningEffort": "max" } }
+          ]
+        },
+        "gpt-5.6-luna": {
+          "name": "GPT-5.6 Luna",
+          "variants": [
+            { "id": "low", "settings": { "reasoningEffort": "low" } },
+            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
+            { "id": "high", "settings": { "reasoningEffort": "high" } },
+            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
+            { "id": "max", "settings": { "reasoningEffort": "max" } }
+          ]
+        }
       }
     },
     "codex-lb-sleev": {
@@ -68,10 +94,36 @@
             { "id": "max", "settings": { "reasoningEffort": "max" } }
           ]
         },
-        "gpt-5.6-sol": { "name": "GPT-5.6 Sol" },
-        "gpt-5.6-terra": { "name": "GPT-5.6 Terra" },
-        "gpt-5.6-luna": { "name": "GPT-5.6 Luna" },
-        "gpt-5.5": { "name": "GPT-5.5" }
+        "gpt-5.6-sol": {
+          "name": "GPT-5.6 Sol",
+          "variants": [
+            { "id": "low", "settings": { "reasoningEffort": "low" } },
+            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
+            { "id": "high", "settings": { "reasoningEffort": "high" } },
+            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
+            { "id": "max", "settings": { "reasoningEffort": "max" } }
+          ]
+        },
+        "gpt-5.6-terra": {
+          "name": "GPT-5.6 Terra",
+          "variants": [
+            { "id": "low", "settings": { "reasoningEffort": "low" } },
+            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
+            { "id": "high", "settings": { "reasoningEffort": "high" } },
+            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
+            { "id": "max", "settings": { "reasoningEffort": "max" } }
+          ]
+        },
+        "gpt-5.6-luna": {
+          "name": "GPT-5.6 Luna",
+          "variants": [
+            { "id": "low", "settings": { "reasoningEffort": "low" } },
+            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
+            { "id": "high", "settings": { "reasoningEffort": "high" } },
+            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
+            { "id": "max", "settings": { "reasoningEffort": "max" } }
+          ]
+        }
       }
     }
   },
