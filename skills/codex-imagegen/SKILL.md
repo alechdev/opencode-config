@@ -9,6 +9,7 @@ description: >
   access and the `codex` binary installed but no native image-generation tool.
   Also triggers on "generate an image", "make me a picture of", "edit this
   image", or when another skill requires an `imagegen` step.
+slash: true
 ---
 
 # Generate Images via Codex CLI

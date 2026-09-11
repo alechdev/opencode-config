@@ -1,5 +1,6 @@
 ---
 name: ui-design
+slash: true
 description: >-
   Designs, builds, and audits UI in React, Next, and Tailwind: visual
   direction, Tailwind implementation,
