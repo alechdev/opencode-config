@@ -1,12 +1,7 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": false,
-  "model": "codex-lb/gpt-5.6-terra",
-  "agents": {
-    "title": {
-      "model": "codex-lb/gpt-5.6-luna"
-    }
-  },
+  "model": "codex-lb/gpt-6.1-sol",
   "websearch": {
     "provider": "exa"
   },
@@ -21,12 +16,8 @@
         "apiKey": "{env:CODEX_LB_API_KEY}"
       },
       "models": {
-        "gpt-6-astra": {
-          "name": "GPT-6 Astra",
-          "settings": {
-            "reasoningEffort": "medium",
-            "reasoningSummary": "detailed"
-          },
+        "gpt-6.1-sol": {
+          "name": "GPT-6.1 Sol",
           "variants": [
             { "id": "low", "settings": { "reasoningEffort": "low" } },
             { "id": "medium", "settings": { "reasoningEffort": "medium" } },
@@ -37,46 +28,6 @@
         },
         "gpt-6-luna": {
           "name": "GPT-6 Luna",
-          "variants": [
-            { "id": "low", "settings": { "reasoningEffort": "low" } },
-            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
-            { "id": "high", "settings": { "reasoningEffort": "high" } },
-            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
-            { "id": "max", "settings": { "reasoningEffort": "max" } }
-          ]
-        },
-        "gpt-6-sol": {
-          "name": "GPT-6 Sol",
-          "variants": [
-            { "id": "low", "settings": { "reasoningEffort": "low" } },
-            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
-            { "id": "high", "settings": { "reasoningEffort": "high" } },
-            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
-            { "id": "max", "settings": { "reasoningEffort": "max" } }
-          ]
-        },
-        "gpt-5.6-sol": {
-          "name": "GPT-5.6 Sol",
-          "variants": [
-            { "id": "low", "settings": { "reasoningEffort": "low" } },
-            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
-            { "id": "high", "settings": { "reasoningEffort": "high" } },
-            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
-            { "id": "max", "settings": { "reasoningEffort": "max" } }
-          ]
-        },
-        "gpt-5.6-terra": {
-          "name": "GPT-5.6 Terra",
-          "variants": [
-            { "id": "low", "settings": { "reasoningEffort": "low" } },
-            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
-            { "id": "high", "settings": { "reasoningEffort": "high" } },
-            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
-            { "id": "max", "settings": { "reasoningEffort": "max" } }
-          ]
-        },
-        "gpt-5.6-luna": {
-          "name": "GPT-5.6 Luna",
           "variants": [
             { "id": "low", "settings": { "reasoningEffort": "low" } },
             { "id": "medium", "settings": { "reasoningEffort": "medium" } },
@@ -100,12 +51,8 @@
         "sleev-base-url": "{env:CODEX_LB_BASE_URL}"
       },
       "models": {
-        "gpt-6-astra": {
-          "name": "GPT-6 Astra",
-          "settings": {
-            "reasoningEffort": "medium",
-            "reasoningSummary": "detailed"
-          },
+        "gpt-6.1-sol": {
+          "name": "GPT-6.1 Sol",
           "variants": [
             { "id": "low", "settings": { "reasoningEffort": "low" } },
             { "id": "medium", "settings": { "reasoningEffort": "medium" } },
@@ -116,46 +63,6 @@
         },
         "gpt-6-luna": {
           "name": "GPT-6 Luna",
-          "variants": [
-            { "id": "low", "settings": { "reasoningEffort": "low" } },
-            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
-            { "id": "high", "settings": { "reasoningEffort": "high" } },
-            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
-            { "id": "max", "settings": { "reasoningEffort": "max" } }
-          ]
-        },
-        "gpt-6-sol": {
-          "name": "GPT-6 Sol",
-          "variants": [
-            { "id": "low", "settings": { "reasoningEffort": "low" } },
-            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
-            { "id": "high", "settings": { "reasoningEffort": "high" } },
-            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
-            { "id": "max", "settings": { "reasoningEffort": "max" } }
-          ]
-        },
-        "gpt-5.6-sol": {
-          "name": "GPT-5.6 Sol",
-          "variants": [
-            { "id": "low", "settings": { "reasoningEffort": "low" } },
-            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
-            { "id": "high", "settings": { "reasoningEffort": "high" } },
-            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
-            { "id": "max", "settings": { "reasoningEffort": "max" } }
-          ]
-        },
-        "gpt-5.6-terra": {
-          "name": "GPT-5.6 Terra",
-          "variants": [
-            { "id": "low", "settings": { "reasoningEffort": "low" } },
-            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
-            { "id": "high", "settings": { "reasoningEffort": "high" } },
-            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
-            { "id": "max", "settings": { "reasoningEffort": "max" } }
-          ]
-        },
-        "gpt-5.6-luna": {
-          "name": "GPT-5.6 Luna",
           "variants": [
             { "id": "low", "settings": { "reasoningEffort": "low" } },
             { "id": "medium", "settings": { "reasoningEffort": "medium" } },
@@ -178,8 +85,8 @@
             { "id": "max", "settings": { "reasoningEffort": "max" } }
           ]
         },
-        "gpt-6-sol": {
-          "name": "GPT-6 Sol",
+        "gpt-6.1-sol": {
+          "name": "GPT-6.1 Sol",
           "variants": [
             { "id": "low", "settings": { "reasoningEffort": "low" } },
             { "id": "medium", "settings": { "reasoningEffort": "medium" } },
